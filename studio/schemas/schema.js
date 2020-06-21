@@ -6,6 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // document schemas
 import author from './documents/author'
+import photographer from './documents/photographer'
 import category from './documents/category'
 import post from './documents/post'
 import siteSettings from './documents/siteSettings'
@@ -16,6 +17,7 @@ import bioPortableText from './objects/bioPortableText'
 import excerptPortableText from './objects/excerptPortableText'
 import mainImage from './objects/mainImage'
 import authorReference from './objects/authorReference'
+import photographerReference from './objects/photographerReference'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -31,6 +33,8 @@ export default createSchema({
     category,
     author,
     mainImage,
+    photographer,
+    photographerReference,
     authorReference,
     bodyPortableText,
     bioPortableText,
