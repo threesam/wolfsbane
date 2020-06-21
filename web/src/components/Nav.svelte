@@ -5,7 +5,7 @@
 <style>
   nav {
     border-bottom: 1px solid var(--light-grey);
-    font-weight: 300;
+    font-weight: 400;
     padding: 0 1em;
     color: var(--white);
   }
