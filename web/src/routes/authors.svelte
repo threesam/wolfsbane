@@ -2,7 +2,9 @@
   import client from '../sanityClient'
   export function preload({ params, query }) {
     return client
-      .fetch('*[_type == "author"]')
+      .fetch(
+        '*[_type == "author"]{name, "alt": image.alt, "imageUrl": image.asset->url}|order(name asc)',
+      )
       .then((authors) => {
         // return console.log(authors)
         return { authors }
@@ -12,13 +14,22 @@
 </script>
 
 <script>
+  import Author from '../components/Author.svelte'
   export let authors
 </script>
 
-<h2>Authors</h2>
+<style>
+  div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+  }
+</style>
 
-<ul>
+<h1>Authors</h1>
+
+<div>
   {#each authors as author}
-    <li>{author.name}</li>
+    <Author {author} />
   {/each}
-</ul>
+</div>

@@ -1,7 +1,7 @@
 :root {
 	--emphasized-color: rgb(50,50,250);
 	--white: white;
-	--light-grey: lightgrey;
+	--light-grey: rgb(217, 221, 215);
 	--dark-grey: rgb(57, 59, 56);
 	--black: rgb(20,20,30);
 }

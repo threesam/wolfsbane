@@ -1,15 +1,3 @@
-<script context="module">
-  import client from '../sanityClient'
-  export function preload({ params, query }) {
-    return client
-      .fetch('*[_type == "author"]')
-      .then((posts) => {
-        return { posts }
-      })
-      .catch((err) => this.error(500, err))
-  }
-</script>
-
 <style>
   h1 {
     text-align: center;
