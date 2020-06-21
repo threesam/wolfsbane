@@ -21,8 +21,14 @@
 <style>
   div {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 1rem;
+  }
+
+  @media (min-width: 800px) {
+    div {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 </style>
 
