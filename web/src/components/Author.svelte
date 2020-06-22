@@ -3,7 +3,7 @@
 </script>
 
 <style>
-  div {
+  a {
     display: flex;
     flex-flow: row;
     align-items: center;
@@ -16,7 +16,7 @@
   }
 </style>
 
-<div>
+<a href="authors/{author.slug}">
   {#if author.imageUrl}
     <img
       src={`${author.imageUrl}?fit=crop&crop=entropy&w=100&h=100`}
@@ -29,4 +29,4 @@
       height="100" />
   {/if}
   <span>{author.name}</span>
-</div>
+</a>
