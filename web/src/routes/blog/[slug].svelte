@@ -9,14 +9,14 @@
     const filter = '*[_type == "post" && slug.current == $slug][0]'
     const projection = `{
       ...,
+      "author": authors[0].author->name,
+      "image": mainImage.asset->url,
+      "alt": mainImage.alt,
+      "caption": mainImage.caption,
       body[]{
         ...,
         children[]{
-          ...,
-          _type == 'authorReference' => {
-            _type,
-            "author": author.name->
-          }
+          ...
         }
       }
     }`
@@ -55,6 +55,14 @@
   .content :global(li) {
     margin: 0 0 0.5em 0;
   }
+  figure {
+    background: var(--dark-grey);
+    color: var(--white);
+  }
+  figcaption {
+    padding: 0.5rem;
+    text-align: center;
+  }
 </style>
 
 <svelte:head>
@@ -65,5 +73,9 @@
 <h2>{post.author}</h2>
 
 <div class="content">
+  <figure>
+    <img src={post.image} alt={post.alt} />
+    <figcaption>{post.caption}</figcaption>
+  </figure>
   <BlockContent blocks={post.body} {serializers} />
 </div>
