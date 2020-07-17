@@ -8,12 +8,14 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import author from './documents/author'
 import photographer from './documents/photographer'
 import category from './documents/category'
+import collection from './documents/collection'
 import post from './documents/post'
 import siteSettings from './documents/siteSettings'
 
 // Object types
 import bodyPortableText from './objects/bodyPortableText'
 import bioPortableText from './objects/bioPortableText'
+import collectionReference from './objects/collectionReference'
 import excerptPortableText from './objects/excerptPortableText'
 import mainImage from './objects/mainImage'
 import authorReference from './objects/authorReference'
@@ -31,12 +33,14 @@ export default createSchema({
     siteSettings,
     post,
     category,
+    collection,
     author,
     mainImage,
     photographer,
     photographerReference,
     authorReference,
     bodyPortableText,
+    collectionReference,
     bioPortableText,
     excerptPortableText
 
