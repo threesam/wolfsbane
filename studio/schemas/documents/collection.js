@@ -41,7 +41,20 @@ export default {
             type: 'excerptPortableText',
             title: 'Excerpt',
             description: 'This ends up on summary pages, on Google, when people share your post in social media.'
-        }
+        },
+        {
+            name: 'posts',
+            title: 'Posts',
+            type: 'array',
+            of: [
+                {
+                    type: 'reference',
+                    to: {
+                        type: 'post'
+                    }
+                }
+            ]
+        },
     ],
     orderings: [
         {
@@ -79,23 +92,14 @@ export default {
             subtitle: 'publishedAt',
             media: 'cover'
         },
-        prepare({ title = 'No title', publishedAt, slug, media }) {
-            const dateSegment = format(publishedAt, 'YYYY')
-            const path = `/${dateSegment}/${slug.current}/`
-            return {
-                title,
-                media,
-                subtitle: publishedAt ? path : 'Missing publishing date'
-            }
-        }
+        // prepare({ title = 'No title', publishedAt, slug, media }) {
+        //     const dateSegment = format(publishedAt, 'YYYY')
+        //     const path = `/${dateSegment}/${slug.current}/`
+        //     return {
+        //         title,
+        //         media,
+        //         subtitle: publishedAt ? path : 'Missing publishing date'
+        //     }
+        // }
     }
-    // preview: {
-    //     select: {
-    //         title: 'title',
-    //         publishedAt: 'publishedAt',
-    //         slug: 'slug',
-    //         media: 'mainImage'
-    //     },
-
-    // }
 }

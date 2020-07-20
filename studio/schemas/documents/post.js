@@ -28,14 +28,10 @@ export default {
       description: 'This can be used to schedule post for publishing'
     },
     {
-      name: 'collections',
+      name: 'collection',
       title: 'Collection',
-      type: 'array',
-      of: [
-        {
-          type: 'collectionReference'
-        }
-      ]
+      type: 'reference',
+      to: [{ type: 'collection' }]
     },
     {
       name: 'mainImage',
@@ -87,7 +83,7 @@ export default {
       type: 'bodyPortableText',
       title: 'Body'
     },
-    
+
   ],
   orderings: [
     {

@@ -1,22 +1,32 @@
 <script context="module">
   import client from '../../sanityClient'
   export function preload({ params, query }) {
-    return client
-      .fetch(
-        `*[_type == "post" && defined(slug.current) && publishedAt < now()]
+    return (
+      client
+        .fetch(
+          `*[_type == "post" && defined(slug.current) && publishedAt < now() && defined(collection)]
         {
           "slug": slug.current, 
           publishedAt, 
           title,
           "author": authors[0].author->.name,
           "image": mainImage.asset->url,
-          "alt": mainImage.alt
+          "alt": mainImage.alt,
+          "collection": collection->{
+            title, 
+            "cover": cover.asset->url, 
+            "alt": cover.alt, 
+            "caption": cover.caption, 
+            description
+            }
         }|order(publishedAt desc)`,
-      )
-      .then((posts) => {
-        return { posts }
-      })
-      .catch((err) => this.error(500, err))
+        )
+        // *[_type == 'post' && defined(collection)]{title, "edition": collection->{title, "cover": cover.asset->url, "alt": cover.alt, "caption": cover.caption, description}}
+        .then((posts) => {
+          return { posts }
+        })
+        .catch((err) => this.error(500, err))
+    )
   }
 </script>
 
@@ -25,23 +35,25 @@
   import RecentPosts from './RecentPosts.svelte'
 
   export let posts
+  const collection = posts[0].collection
 </script>
 
 <style>
   @media (min-width: 1000px) {
     section {
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 3fr 2fr;
+      grid-gap: 2rem;
     }
   }
 </style>
 
 <svelte:head>
-  <title>Blog</title>
+  <title>The Blog</title>
 </svelte:head>
 
 <section>
-  <Collections />
+  <Collections {collection} />
   <aside>
     <RecentPosts {posts} />
   </aside>

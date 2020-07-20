@@ -1,6 +1,6 @@
 <script>
   export let posts
-  posts.length = 5
+  // posts.length = 5
 
   let showAllPosts = false
 
