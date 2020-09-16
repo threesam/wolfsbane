@@ -18,7 +18,11 @@
     "dashboard-widget-document-list",
     "dashboard-widget-netlify",
     "@sanity/code-input",
-    "@sanity/vision"
+    "@sanity/vision",
+    "asset-source-thispersondoesnotexist",
+    "asset-source-fiona-placeholder",
+    "asset-source-giphy",
+    "content-model-graph"
   ],
   "parts": [
     {

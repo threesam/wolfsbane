@@ -39,11 +39,18 @@
 </script>
 
 <style>
+  section {
+    display: grid;
+    grid-gap: 1rem;
+  }
+  @media (max-width: 999px) {
+    section {
+      grid-template-columns: 1fr;
+    }
+  }
   @media (min-width: 1000px) {
     section {
-      display: grid;
       grid-template-columns: 3fr 2fr;
-      grid-gap: 2rem;
     }
   }
 </style>

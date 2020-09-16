@@ -4,6 +4,10 @@
 </script>
 
 <style>
+  article {
+    border-bottom: 1px solid grey;
+    padding-bottom: 0.5rem;
+  }
   h1 {
     position: absolute;
     top: 3rem;
@@ -14,11 +18,11 @@
   img {
     width: 100%;
   }
-  @media (max-width: 999px) {
+  /* @media (max-width: 999px) {
     article {
       margin-bottom: 1rem;
     }
-  }
+  } */
 </style>
 
 <article>

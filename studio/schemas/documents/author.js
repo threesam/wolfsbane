@@ -1,3 +1,5 @@
+import FionaPlaceholder from "part:sanity-plugin-asset-source/fiona-placeholder"
+
 export default {
   name: 'author',
   type: 'document',

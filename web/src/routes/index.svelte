@@ -1,4 +1,7 @@
 <style>
+  section {
+    height: calc(100vh - 5rem);
+  }
   h1 {
     text-align: center;
     margin: 0 auto;
@@ -22,4 +25,6 @@
   <title>Wolfsbane</title>
 </svelte:head>
 
-<h1>Wolfsbane</h1>
+<section>
+  <h1>Wolfsbane</h1>
+</section>

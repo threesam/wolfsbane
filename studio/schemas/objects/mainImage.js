@@ -1,9 +1,12 @@
+import FionaPlaceholder from "part:sanity-plugin-asset-source/fiona-placeholder"
+
 export default {
   name: 'mainImage',
   type: 'image',
   title: 'Image',
   options: {
-    hotspot: true
+    hotspot: true,
+    sources: [FionaPlaceholder]
   },
   fields: [
     {

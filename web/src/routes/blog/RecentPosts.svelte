@@ -11,18 +11,15 @@
 
 <style>
   ul {
-    margin: 0 0 1em 0;
     line-height: 1.5;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
   }
   span {
     font-weight: 900;
   }
-  ul {
-    display: flex;
-    flex-flow: column;
-  }
   li {
-    margin-bottom: 1rem;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.29);
     display: inline-block;
   }
@@ -37,7 +34,7 @@
   }
 </style>
 
-<h2>Recent posts</h2>
+<h2>Posts</h2>
 
 <ul>
   {#each posts as post}

@@ -1,9 +1,9 @@
 :root {
-	--emphasized-color: rgb(50,50,250);
-	--white: white;
+	--accent: rgb(44, 44, 228);
+	--white: rgb(236, 241, 233);
 	--light-grey: rgb(217, 221, 215);
-	--dark-grey: rgb(57, 59, 56);
-	--black: rgb(20,20,30);
+	--dark-grey: rgb(96, 100, 94);
+	--black: rgb(25, 31, 27);
 }
 
 * {
