@@ -30,7 +30,7 @@
     "sanity-plugin-asset-source-giphy": "^0.0.12",
     "sanity-plugin-asset-source-thispersondoesnotexist": "^0.0.1",
     "sanity-plugin-content-model-graph": "^1.1.1",
-    "sanity-plugin-dashboard-widget-document-list": "^0.0.10",
+    "sanity-plugin-dashboard-widget-document-list": "0.0.11",
     "sanity-plugin-dashboard-widget-netlify": "^1.0.1"
   },
   "devDependencies": {
