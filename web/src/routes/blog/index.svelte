@@ -1,32 +1,29 @@
 <script context="module">
   import client from '../../sanityClient'
-  export function preload({ params, query }) {
-    return (
-      client
-        .fetch(
-          `*[_type == "post" && defined(slug.current) && publishedAt < now() && defined(collection)]
-        {
+  export function preload({ params }) {
+    const filter = `*[_type == 'collection' && publishedAt < now()]|order(_createdAt desc)[5]`
+    const projection = `{
+        ...,
+        "cover": cover.asset->url,
+        "alt": cover.alt,
+        "caption": cover.caption,
+        title,
+        "posts": *[_type == 'post' && references(^._id)]|order(_createdAt desc){
           "slug": slug.current, 
           publishedAt, 
           title,
-          "author": authors[0].author->.name,
+          "author": authors[0].author->name,
           "image": mainImage.asset->url,
           "alt": mainImage.alt,
-          "collection": collection->{
-            title, 
-            "cover": cover.asset->url, 
-            "alt": cover.alt, 
-            "caption": cover.caption, 
-            description
-            }
-        }|order(publishedAt desc)`,
-        )
-        // *[_type == 'post' && defined(collection)]{title, "edition": collection->{title, "cover": cover.asset->url, "alt": cover.alt, "caption": cover.caption, description}}
-        .then((posts) => {
-          return { posts }
-        })
-        .catch((err) => this.error(500, err))
-    )
+        }
+      }`
+    const query = filter + projection
+    return client
+      .fetch(query)
+      .then((collection) => {
+        return { collection }
+      })
+      .catch((err) => this.error(500, err))
   }
 </script>
 
@@ -34,8 +31,8 @@
   import Collections from './Collections.svelte'
   import RecentPosts from './RecentPosts.svelte'
 
-  export let posts
-  const collection = posts[0].collection
+  export let collection
+  const { posts } = collection
 </script>
 
 <style>
