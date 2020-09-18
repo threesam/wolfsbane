@@ -42,19 +42,6 @@ export default {
             title: 'Excerpt',
             description: 'This ends up on summary pages, on Google, when people share your post in social media.'
         },
-        {
-            name: 'posts',
-            title: 'Posts',
-            type: 'array',
-            of: [
-                {
-                    type: 'reference',
-                    to: {
-                        type: 'post'
-                    }
-                }
-            ]
-        },
     ],
     orderings: [
         {
