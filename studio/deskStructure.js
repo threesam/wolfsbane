@@ -23,6 +23,11 @@ export default () =>
             .documentId('siteSettings')
         ),
       S.listItem()
+        .title('Collections')
+        .icon(MdCollections)
+        .schemaType('collection')
+        .child(S.documentTypeList('collection').title('Collections')),
+      S.listItem()
         .title('Blog posts')
         .icon(MdBeach)
         .schemaType('post')
@@ -33,20 +38,15 @@ export default () =>
         .schemaType('author')
         .child(S.documentTypeList('author').title('Authors')),
       S.listItem()
-        .title('Categories')
-        .icon(MdStar)
-        .schemaType('category')
-        .child(S.documentTypeList('category').title('Categories')),
-      S.listItem()
-        .title('Collections')
-        .icon(MdCollections)
-        .schemaType('collection')
-        .child(S.documentTypeList('collection').title('Collections')),
-      S.listItem()
         .title('Photographers')
         .icon(MdCamera)
         .schemaType('photographer')
         .child(S.documentTypeList('photographer').title('Photographers')),
+      S.listItem()
+        .title('Categories')
+        .icon(MdStar)
+        .schemaType('category')
+        .child(S.documentTypeList('category').title('Categories')),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above
