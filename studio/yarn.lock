@@ -1337,6 +1337,10 @@
   version "0.140.15"
   resolved "https://registry.npmjs.org/@sanity/image-url/-/image-url-0.140.15.tgz#7b8afc49130398e1a6e7bde03b5961d2384f7676"
 
+"@sanity/image-url@^0.140.19":
+  version "0.140.22"
+  resolved "https://registry.yarnpkg.com/@sanity/image-url/-/image-url-0.140.22.tgz#7a65f56bb751f7b1c5dfacfadd34ee10fc4f0fde"
+
 "@sanity/imagetool@1.149.16":
   version "1.149.16"
   resolved "https://registry.npmjs.org/@sanity/imagetool/-/imagetool-1.149.16.tgz#98673911cd18c3c48598e0b6bbe5fe91978311eb"
@@ -7546,13 +7550,17 @@ q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.npmjs.org/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
 
-qs@6.5.2, qs@~6.5.2:
+qs@6.5.2:
   version "6.5.2"
   resolved "https://registry.npmjs.org/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
 qs@6.7.0:
   version "6.7.0"
   resolved "https://registry.npmjs.org/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
+
+qs@~6.5.2:
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
 
 query-string@^4.3.2:
   version "4.3.4"
